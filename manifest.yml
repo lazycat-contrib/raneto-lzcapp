@@ -1,0 +1,23 @@
+lzc-sdk-version: "0.1"
+name: Raneto
+package: cloud.lazycat.app.raneto
+version: 0.17.8
+description: open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase
+homepage: https://github.com/ryanlelek/Raneto
+author: ryanlelek
+application:
+  subdomain: raneto
+  background_task: true
+  public_path:
+    - /
+  routes:
+    - /=http://raneto:3000/
+services:
+  raneto:
+    image: registry.lazycat.cloud/czyt/linuxserver/raneto:2912720c87e587ce
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    binds:
+      - /lzcapp/var/config:/config
