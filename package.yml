@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.raneto
+version: 0.17.8
+name: Raneto
+description: "open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase"
+min_os_version: "1.5.0"
+homepage: https://github.com/ryanlelek/Raneto
+author: ryanlelek
+locales:
+  zh:
+    description: "开源知识库平台，使用静态 Markdown 文件驱动你的知识库"
+    name: Raneto
+  en:
+    description: "open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase"
+    name: Raneto

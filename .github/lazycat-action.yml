@@ -1,0 +1,37 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/raneto.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: raneto
+build:
+  run_buildscript: false
+images:
+  - id: raneto
+    target: service
+    service: raneto
+    source: linuxserver/raneto
+    channel: stable
+    sort: semver
+    tag_regex: '^\d+\.\d+\.\d+$'
+    exclude_regex: '^(18|19|20)\.'
+    delivery:
+      mode: mirror
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to Miaomiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Raneto
+    summary: "开源知识库平台，使用静态 Markdown 文件驱动知识库"
