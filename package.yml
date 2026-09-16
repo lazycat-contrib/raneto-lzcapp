@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.raneto
-version: 0.17.8
+version: 0.18.1
 name: Raneto
 description: "open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase"
 min_os_version: "1.5.0"
